@@ -31,7 +31,7 @@
 21-->[androidx.core:core:1.9.0] C:\Users\User\.gradle\caches\transforms-3\543740e42155bb89dcbd6bdda0f43b68\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 22
 23    <application
-23-->C:\Users\User\AndroidStudioProjects\FocusBooster\app\src\main\AndroidManifest.xml:7:5-30:19
+23-->C:\Users\User\AndroidStudioProjects\FocusBooster\app\src\main\AndroidManifest.xml:7:5-26:19
 24        android:allowBackup="true"
 24-->C:\Users\User\AndroidStudioProjects\FocusBooster\app\src\main\AndroidManifest.xml:8:9-35
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -68,34 +68,28 @@
 42-->C:\Users\User\AndroidStudioProjects\FocusBooster\app\src\main\AndroidManifest.xml:23:13-41
 43            android:exported="false" />
 43-->C:\Users\User\AndroidStudioProjects\FocusBooster\app\src\main\AndroidManifest.xml:24:13-37
-44        <activity
-44-->C:\Users\User\AndroidStudioProjects\FocusBooster\app\src\main\AndroidManifest.xml:26:9-28:40
-45            android:name="com.galturknittz.focusbooster.SettingsActivity"
-45-->C:\Users\User\AndroidStudioProjects\FocusBooster\app\src\main\AndroidManifest.xml:27:13-45
-46            android:exported="false" />
-46-->C:\Users\User\AndroidStudioProjects\FocusBooster\app\src\main\AndroidManifest.xml:28:13-37
-47
-48        <provider
-48-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-49            android:name="androidx.startup.InitializationProvider"
-49-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-50            android:authorities="com.galturknittz.focusbooster.androidx-startup"
-50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-51            android:exported="false" >
-51-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+44
+45        <provider
+45-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+46            android:name="androidx.startup.InitializationProvider"
+46-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+47            android:authorities="com.galturknittz.focusbooster.androidx-startup"
+47-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+48            android:exported="false" >
+48-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+49            <meta-data
+49-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+50                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+51                android:value="androidx.startup" />
+51-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
 52            <meta-data
-52-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-53                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-53-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+52-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\User\.gradle\caches\transforms-3\a08e537b82c7c1ecb0346f490fbd9592\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+53                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+53-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\User\.gradle\caches\transforms-3\a08e537b82c7c1ecb0346f490fbd9592\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
 54                android:value="androidx.startup" />
-54-->[androidx.emoji2:emoji2:1.2.0] C:\Users\User\.gradle\caches\transforms-3\78e0f475248ccf690a14f03fa1cc16c2\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-55            <meta-data
-55-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\User\.gradle\caches\transforms-3\a08e537b82c7c1ecb0346f490fbd9592\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-56                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-56-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\User\.gradle\caches\transforms-3\a08e537b82c7c1ecb0346f490fbd9592\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-57                android:value="androidx.startup" />
-57-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\User\.gradle\caches\transforms-3\a08e537b82c7c1ecb0346f490fbd9592\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-58        </provider>
-59    </application>
-60
-61</manifest>
+54-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\User\.gradle\caches\transforms-3\a08e537b82c7c1ecb0346f490fbd9592\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+55        </provider>
+56    </application>
+57
+58</manifest>

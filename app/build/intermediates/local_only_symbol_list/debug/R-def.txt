@@ -16,12 +16,8 @@ id btnBack
 id btnClearTasks
 id btnDeleteTask
 id btnFinishTask
-id btnPhoto
-id btnSaveSettings
 id btnTakePhoto
 id etTaskName
-id etUserName
-id ivProfile
 id ivTaskPhoto
 id menu_about
 id menu_help
@@ -30,7 +26,6 @@ id switchCompleted
 id tasksContainer
 id tvTaskName
 layout activity_main
-layout activity_settings
 layout activity_task
 menu main_menu
 string app_name

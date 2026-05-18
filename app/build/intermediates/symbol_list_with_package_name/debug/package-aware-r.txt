@@ -3112,8 +3112,6 @@ id btnBack
 id btnClearTasks
 id btnDeleteTask
 id btnFinishTask
-id btnPhoto
-id btnSaveSettings
 id btnTakePhoto
 id buttonPanel
 id cache_measures
@@ -3196,7 +3194,6 @@ id endToStart
 id enterAlways
 id enterAlwaysCollapsed
 id etTaskName
-id etUserName
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3245,7 +3242,6 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
-id ivProfile
 id ivTaskPhoto
 id jumpToEnd
 id jumpToStart
@@ -3634,7 +3630,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
-layout activity_settings
 layout activity_task
 layout custom_dialog
 layout design_bottom_navigation_item

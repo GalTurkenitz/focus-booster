@@ -3111,8 +3111,6 @@ int id btnBack 0x7f080063
 int id btnClearTasks 0x7f080064
 int id btnDeleteTask 0x7f080065
 int id btnFinishTask 0x7f080066
-int id btnPhoto 0x7f080067
-int id btnSaveSettings 0x7f080068
 int id btnTakePhoto 0x7f080069
 int id buttonPanel 0x7f08006a
 int id cache_measures 0x7f08006b
@@ -3195,7 +3193,6 @@ int id endToStart 0x7f0800b7
 int id enterAlways 0x7f0800b8
 int id enterAlwaysCollapsed 0x7f0800b9
 int id etTaskName 0x7f0800ba
-int id etUserName 0x7f0800bb
 int id exitUntilCollapsed 0x7f0800bc
 int id expand_activities_button 0x7f0800bd
 int id expanded_menu 0x7f0800be
@@ -3244,7 +3241,6 @@ int id invisible 0x7f0800e8
 int id inward 0x7f0800e9
 int id italic 0x7f0800ea
 int id item_touch_helper_previous_elevation 0x7f0800eb
-int id ivProfile 0x7f0800ec
 int id ivTaskPhoto 0x7f0800ed
 int id jumpToEnd 0x7f0800ee
 int id jumpToStart 0x7f0800ef
@@ -3633,7 +3629,6 @@ int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_main 0x7f0b001c
-int layout activity_settings 0x7f0b001d
 int layout activity_task 0x7f0b001e
 int layout custom_dialog 0x7f0b001f
 int layout design_bottom_navigation_item 0x7f0b0020

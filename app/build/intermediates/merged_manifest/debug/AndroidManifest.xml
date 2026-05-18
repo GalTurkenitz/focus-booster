@@ -41,9 +41,6 @@
         <activity
             android:name="com.galturknittz.focusbooster.TaskActivity"
             android:exported="false" />
-        <activity
-            android:name="com.galturknittz.focusbooster.SettingsActivity"
-            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "com.galturknittz.focusbooster.app-merged_res-28:/layout_activity_settings.xml.flat",
-        "source": "com.galturknittz.focusbooster.app-main-30:/layout/activity_settings.xml"
-    },
-    {
         "merged": "com.galturknittz.focusbooster.app-merged_res-28:/layout_activity_task.xml.flat",
         "source": "com.galturknittz.focusbooster.app-main-30:/layout/activity_task.xml"
     },
