@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.galturknittz.focusbooster.app-merged_res-28:/layout_activity_settings.xml.flat",
+        "source": "com.galturknittz.focusbooster.app-main-30:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.galturknittz.focusbooster.app-merged_res-28:/layout_activity_task.xml.flat",
+        "source": "com.galturknittz.focusbooster.app-main-30:/layout/activity_task.xml"
+    },
+    {
+        "merged": "com.galturknittz.focusbooster.app-merged_res-28:/xml_file_paths.xml.flat",
+        "source": "com.galturknittz.focusbooster.app-main-30:/xml/file_paths.xml"
+    },
+    {
+        "merged": "com.galturknittz.focusbooster.app-merged_res-28:/layout_activity_main.xml.flat",
+        "source": "com.galturknittz.focusbooster.app-main-30:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.galturknittz.focusbooster.app-merged_res-28:/menu_main_menu.xml.flat",
+        "source": "com.galturknittz.focusbooster.app-main-30:/menu/main_menu.xml"
+    }
+]
