@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> taskList = new ArrayList<>();
     private ArrayList<Boolean> taskDone = new ArrayList<>();
 
-    private static final int GO_TO_TASK = 1;
+    private ActivityResultLauncher<Intent> taskLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,28 @@ public class MainActivity extends AppCompatActivity {
 
         etTaskName = findViewById(R.id.etTaskName);
         tasksContainer = findViewById(R.id.tasksContainer);
+
+        taskLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        Intent data = result.getData();
+                        int pos = data.getIntExtra("pos", -1);
+                        boolean deleted = data.getBooleanExtra("deleted", false);
+                        boolean done = data.getBooleanExtra("done", false);
+
+                        if (pos >= 0 && pos < taskList.size()) {
+                            if (deleted) {
+                                taskList.remove(pos);
+                                taskDone.remove(pos);
+                            } else {
+                                taskDone.set(pos, done);
+                            }
+                            saveTasks();
+                            showTasks();
+                        }
+                    }
+                });
 
         findViewById(R.id.btnAddTask).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,31 +139,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("name", taskList.get(pos));
         intent.putExtra("pos", pos);
         intent.putExtra("done", taskDone.get(pos));
-        startActivityForResult(intent, GO_TO_TASK);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (resultCode == RESULT_OK && data != null) {
-            if (requestCode == GO_TO_TASK) {
-                int pos = data.getIntExtra("pos", -1);
-                boolean deleted = data.getBooleanExtra("deleted", false);
-                boolean done = data.getBooleanExtra("done", false);
-
-                if (pos >= 0 && pos < taskList.size()) {
-                    if (deleted) {
-                        taskList.remove(pos);
-                        taskDone.remove(pos);
-                    } else {
-                        taskDone.set(pos, done);
-                    }
-                    saveTasks();
-                    showTasks();
-                }
-            }
-        }
+        taskLauncher.launch(intent);
     }
 
     private void clearAllTasks() {

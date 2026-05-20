@@ -14,9 +14,10 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 public class TaskActivity extends AppCompatActivity {
@@ -29,8 +30,8 @@ public class TaskActivity extends AppCompatActivity {
     private int taskPos;
     private boolean isDone;
 
-    private static final int CAMERA_REQUEST = 100;
-    private static final int CAMERA_PERMISSION_REQUEST = 101;
+    private ActivityResultLauncher<Intent> cameraLauncher;
+    private ActivityResultLauncher<String> permissionLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,26 @@ public class TaskActivity extends AppCompatActivity {
         tvTaskName = findViewById(R.id.tvTaskName);
         switchDone = findViewById(R.id.switchCompleted);
         ivPhoto = findViewById(R.id.ivTaskPhoto);
+
+        cameraLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        Bitmap bitmap = (Bitmap) result.getData().getExtras().get("data");
+                        ivPhoto.setVisibility(View.VISIBLE);
+                        ivPhoto.setImageBitmap(bitmap);
+                    }
+                });
+
+        permissionLauncher = registerForActivityResult(
+                new ActivityResultContracts.RequestPermission(),
+                granted -> {
+                    if (granted) {
+                        cameraLauncher.launch(new Intent(MediaStore.ACTION_IMAGE_CAPTURE));
+                    } else {
+                        Toast.makeText(this, "נדרשת הרשאת מצלמה", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
         taskName = getIntent().getStringExtra("name");
         taskPos = getIntent().getIntExtra("pos", -1);
@@ -87,24 +108,9 @@ public class TaskActivity extends AppCompatActivity {
     private void openCamera() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST);
+            permissionLauncher.launch(Manifest.permission.CAMERA);
         } else {
-            Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivityForResult(cameraIntent, CAMERA_REQUEST);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == CAMERA_PERMISSION_REQUEST) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, CAMERA_REQUEST);
-            } else {
-                Toast.makeText(this, "נדרשת הרשאת מצלמה", Toast.LENGTH_SHORT).show();
-            }
+            cameraLauncher.launch(new Intent(MediaStore.ACTION_IMAGE_CAPTURE));
         }
     }
 
@@ -137,16 +143,6 @@ public class TaskActivity extends AppCompatActivity {
         });
         builder.setNegativeButton("ביטול", null);
         builder.show();
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK && data != null) {
-            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-            ivPhoto.setVisibility(View.VISIBLE);
-            ivPhoto.setImageBitmap(bitmap);
-        }
     }
 
     private void goBack(boolean deleted) {
